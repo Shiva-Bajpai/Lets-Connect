@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#000">
+    <meta name="description" content="Shiva Bajpai | Portfolio, Visit and know about me & my projects/designs. I value simple content structure, clean design patterns, and thoughtful interactions." >
+    <meta name="keywords" content="Shiva Bajpai, Shiva Bajpai portfolio,Shiva Bajpai Portfolio, Shivabajpai, Shiva Bajpai github Shiva Bajpai uiverse, uiverse, Uiverse, Shivabajpai app" >
+    <meta name="author" content="Shiva Bajpai" >
+<!-- 
+    <meta property="og:title" content="" >
+    <meta property="og:image" content="" >
+    <meta property="og:url" content="" >
+    <meta property="og:site_name" content="" >
+    <meta property="og:description" content="" >
+    <meta name="twitter:title" content="" >
+    <meta name="twitter:image" content="" >
+    <meta name="twitter:url" content="" >
+    <meta name="twitter:card" content="" > -->
+
+    <title>Shiva Bajpai | Social App</title>
+    <link rel="icon" type="image/x-icon" href="./Images/shiva.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="preloader" id="preloader">
+        <div class="loader">
+            <div class="blackhole">
+              <div class="blackhole-circle"></div>
+              <div class="blackhole-disc"></div>
+            </div>
+          
+            <div class="curve">
+              <svg viewBox="0 0 500 500">
+                <path id="loading" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97"></path>
+                <text width="500">
+                  <textPath xlink:href="#loading">
+                    loading...
+                  </textPath>
+                </text>
+              </svg>
+            </div>
+          </div>
+    </div>
+    <div class="BigdaddyContainer">
+        <div class="bg" id="bg"></div>
+        <div class="mainContainer">
+            <div class="profileSection">
+                <img src="./Images/shiva.png" alt="">
+                <h1 class="ProfileHeading">@Shiva Bajpai</h1>
+                <p class="aboutdescription">&#60;/&#62; Full-Stack Web Developer
+                    <br>
+                    🖱️ UI/UX Designer
+                </p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="socialsSection">
+   
+              <a href="https://sbajpai.netlify.com" target="_blank" class="portfolio socialbuttons">
+                <img src="./Images/profile-pic (3).png" alt="">
+                <p class="buttonname">Portfolio</p>
+            </a>
+              
+                <a href="https://github.com/Shiva-Bajpai" target="_blank" class="github socialbuttons">
+                    <img src="./Images/github.png" alt="">
+                 <p class="buttonname">Github</p>   
+                </a>
+               
+                <a href="https://www.linkedin.com/in/shiva-bajpai-sb06/" class="linkdin socialbuttons" target="_blank">
+                    <img src="./Images/linkdin.png" alt="">
+                  <p class="buttonname">Linkdin</p>  
+                </a>
+       
+            </div>
+            <div class="signatureSection">
+                <img src="./Images/signature (2).png" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./Scripts/index.js"></script>
+<script src="./Scripts/main.js"></script>
+<script>
+    var loader = document.getElementById("preloader");
+    window.addEventListener("load", function () {
+    setTimeout(function() {
+        loader.style.display = "none";
+        }, 3000);
+  
+        document.addEventListener("contextmenu", function(e){
+  if (e.target.nodeName === "IMG") {
+      e.preventDefault();
+  }
+}, false);
+
+})
+
+</script>
+</html>

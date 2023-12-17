@@ -1,0 +1,432 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*::selection {
+    background-color: rgba(128, 128, 128, 0);
+}
+
+*::-moz-selection {
+    background: rgba(128, 128, 128, 0);
+}
+ 
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+::-webkit-scrollbar{
+    width: 0px;
+}
+::-webkit-scrollbar-track {
+    background: #0a0a10;
+}
+::-webkit-scrollbar-thumb{
+   background-color: #8000ff;
+}
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+:root{
+    font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    cursor:default;
+    --color-white: #fff;
+    --color-black: #000;
+    --color-dark-mode:#11111b;
+    --color-light-mode:#ece7e1;
+    --color-ddd-color: #ddd;
+    --color-gray: #c4c4c4;
+    --color-purple: #8000ff;
+    --color-light-purple: #cf59e6;
+    --color-light-blue: #6bc5f8;
+    --color-navbarBorder-dark:#20222e10;
+    --color-shadowDark:rgba(0, 0, 0, 0.137);
+}
+
+body{
+    background-color: black;
+    overflow: hidden;
+}
+.preloader{
+    position:fixed;
+    left: 0;
+    top: 0;
+    z-index: 999999;
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loader {
+    display: flex;
+    width: 16rem;
+    height: 16rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+  }
+  
+  .curve {
+    width: 180%;
+    height: 180%;
+    position: absolute;
+    animation: rotate 8s linear infinite;
+    fill: transparent;
+  }
+  
+  .curve text {
+    letter-spacing: 20px;
+    text-transform: uppercase;
+    font: 1.5em "Fira Sans", sans-serif;
+    fill: white;
+    filter: drop-shadow(0 2px 8px black);
+  }
+  
+  .blackhole {
+    z-index: -1;
+    display: flex;
+    position: absolute;
+    width: 8rem;
+    height: 8rem;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .blackhole-circle {
+    z-index: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, black 25%, white 35%, white 100%);
+    box-shadow: 0px 0px 2rem #c2babb;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .blackhole-circle::after {
+    z-index: 0;
+    position: absolute;
+    content: "";
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 4px solid white;
+    background: radial-gradient(circle at center, black 35%, white 60%, white 100%);
+    box-shadow: 0px 0px 5rem #c2babb;
+    align-items: center;
+    justify-content: center;
+    filter: blur(4px);
+    animation: pulseAnimation linear infinite 2s alternate-reverse;
+  }
+  
+  .blackhole-circle::before {
+    z-index: 1;
+    content: "";
+    display: flex;
+    width: 4rem;
+    height: 4rem;
+    border: 2px solid #ffffff;
+    box-shadow: 3px 3px 10px #c2babb, inset 0 0 1rem #ffffff;
+    border-radius: 50%;
+    top: 5rem;
+    filter: blur(0.5px);
+    animation: rotate linear infinite 3s;
+  }
+  
+  .blackhole-disc {
+    position: absolute;
+    z-index: 0;
+    display: flex;
+    width: 5rem;
+    height: 10rem;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, #ffffff 80%, #353535 90%, white 100%);
+    filter: blur(1rem) brightness(130%);
+    border: 1rem solid white;
+    box-shadow: 0px 0px 3rem #d7c4be;
+    transform: rotate3d(1, 1, 1, 220deg);
+    animation: pulseAnimation2 linear infinite 2s alternate-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .blackhole-disc::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    display: flex;
+    width: 5rem;
+    height: 10rem;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, #ffffff 80%, #353535 90%, white 100%);
+    filter: blur(3rem);
+    border: 1rem solid white;
+    box-shadow: 0px 0px 6rem #d7c4be;
+    animation: pulseAnimation linear infinite 2s alternate-reverse;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes pulseAnimation {
+    0% {
+      box-shadow: 0px 0px 3rem #c2babb;
+      transform: scale(1);
+    }
+  
+    100% {
+      box-shadow: 0px 0px 5rem #c2babb;
+      transform: scale(1.09);
+    }
+  }
+  
+  @keyframes pulseAnimation2 {
+    0% {
+      box-shadow: 0px 0px 3rem #c2babb;
+      transform: rotate3d(1, 1, 1, 220deg) scale(1);
+    }
+  
+    100% {
+      box-shadow: 0px 0px 5rem #c2babb;
+      transform: rotate3d(1, 1, 1, 220deg)  scale(.95);
+    }
+  }
+
+  /* preloader ends */
+.BigdaddyContainer{
+
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.mainContainer{
+    padding-top: 70px;
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.profileSection{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.profileSection img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.ProfileHeading{
+    color: white;
+    font-weight: 600;
+    font-size: 2.8rem;
+}
+.aboutdescription{
+    font-size: 1.8rem;
+    color: rgb(237, 237, 237);
+    font-weight: 500;
+    text-align: center;
+}
+
+.socialsSection{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.socialbuttons{
+    cursor: pointer;
+    width: 270px;
+    height: 50px;
+    border-radius: 30px;
+    border: 1px solid rgb(31, 31, 31);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: rgba(12, 12, 12, 0.302);
+    backdrop-filter: blur(3px);
+    gap: 15px;
+    position: relative;
+    transition: all .2s;
+    margin-bottom: 30px;
+}
+.socialbuttons:hover{
+    transform: scale(1.05);
+}
+.socialbuttons img{
+    position: absolute;
+    left:7px;
+    height: 36px;
+}
+.socialbuttons p{
+    align-self: center;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+   
+}
+.portfolio p{
+    background: -webkit-linear-gradient(135deg,var(--color-light-blue),var(--color-light-purple),var(--color-light-blue),var(--color-light-purple));
+    background: linear-gradient(-45deg,var(--color-light-blue),var(--color-light-purple),var(--color-light-blue),var(--color-light-purple));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400% 400%;
+    -webkit-animation: gradient 3s ease infinite;
+    animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    
+    100% {
+        background-position: 0 50%;
+    }
+}
+.linkdin{
+    margin-bottom: 0;
+}
+.signatureSection{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.signatureSection img{
+    height: 50%;
+    filter: invert(1);
+}
+/* responsive code below*/
+@media screen and (max-width:1920px) {
+    html {
+        font-size: 60%;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    html {
+        font-size: 60%;
+    }
+}
+
+@media screen and (max-width:998px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    html {
+        font-size: 50%;
+    }
+    .mainContainer{
+        width:100%;
+    }
+ 
+}
+
+@media screen and (max-width:500px) {
+    html {
+        font-size: 45%;  
+    }
+    .loader {
+        width: 20rem;
+        height: 20rem;
+      }
+      .curve text {
+        font: 2em "Fira Sans", sans-serif;
+        ;
+      }
+      
+    .mainContainer{
+        padding-top: 30px;
+        gap: 20px;
+    }
+    .aboutdescription{
+        font-size: 2rem;
+    }
+    .socialsSection{
+        height: 40%;
+    }
+
+    .socialbuttons{
+        height: 55px;
+    }
+    .socialbuttons img{
+        height: 41px;
+    }
+    .socialbuttons p{
+        font-size: 2.1rem;
+    }
+    
+    .signatureSection img{
+        height: 37%;
+        filter: invert(1);
+    }
+
+}
+
+@media screen and (max-width:430px) {
+    html {
+        font-size: 43%;
+    }
+}
+
+@media screen and (max-width:375px) {
+    html {
+        font-size: 40%;
+    }
+}
+@media screen and (max-width:300px) {
+    html {
+        font-size: 40%;
+    }
+}
+
+/* responsive code above */
+
